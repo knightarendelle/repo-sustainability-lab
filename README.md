@@ -15,5 +15,8 @@ It does **not** rank popularity or code quality.
 Uses public GitHub event data (GH Archive via BigQuery).
 No private data is collected.
 
-## Status
-🚧 Setup and data pipeline in progress.
+Baseline Results (v1)
+
+A logistic regression baseline using weekly activity features achieved a ROC-AUC of ~0.80 but very low precision at high-risk thresholds due to extreme class imbalance (~0.6% positives).
+
+This suggests that early stagnation detection in active repositories is inherently difficult using activity volume alone, and that such models are better suited as weak risk indicators rather than decision systems.

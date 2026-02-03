@@ -31,3 +31,17 @@ Goal: build a representative sample of active public repositories without using 
 **Notes**
 - GH Archive contains only public activity; absence of events ≠ inactive development (e.g., mirrored repos).
 - Dataset v1 intentionally avoids stars/forks as sampling signals to reduce popularity bias.
+
+## Stagnation Label (v1)
+
+We define a forward-looking label for each (repo, week_start):
+
+**Label: stagnates_60d = 1** if, in the **next 8 weeks** (≈ 60 days),
+the repo has **low activity** (events_total < 5) for **at least 6 of those 8 weeks**.
+
+Otherwise, **stagnates_60d = 0**.
+
+Rationale:
+- forward-looking (prediction target)
+- robust to brief dips
+- uses only public event counts (no private signals)
